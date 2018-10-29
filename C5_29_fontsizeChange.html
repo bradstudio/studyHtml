@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>即時放大縮小字型</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+        .wrap {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 100px;
+            background-color: #ff6600;
+        }
+
+        .menu {
+            float: right;
+            list-style: none;
+        }
+
+        .menu li {
+            width: 50px;
+            float: left;
+        }
+
+        .menu li>a {
+            background-color: #000;
+            color: #fff;
+            display: block;
+            padding: 0.5em 0;
+            text-align: center;
+            text-decoration: none;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //字體放大
+            $('.font-b').click(function (e) { 
+                e.preventDefault();
+                $('.content p').css('font-size', '20px');        
+            });
+            //字體放大
+            $('.font-m').click(function (e) { 
+                e.preventDefault();
+                $('.content p').css('font-size', '16px');        
+            });
+            //字體放大
+            $('.font-s').click(function (e) { 
+                e.preventDefault();
+                $('.content p').css('font-size', '14px');        
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="menu">
+                <li><a href="#" class="font-b">大</a></li>
+                <li><a href="#" class="font-m">中</a></li>
+                <li><a href="#" class="font-s">小</a></li>
+            </div>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>延遲動畫效果的好用語法</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <style>
+        .box1, .box2, .box3 {
+            width: 100px;
+           height: 100px;
+           display: none;
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            background-color: blue;
+        }
+        .box3 {
+            background-color: black;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.open').click(function (e) { 
+                e.preventDefault();
+                $('.box1').delay(0).slideDown();
+                $('.box2').delay(1000).slideDown();
+                $('.box3').delay(2000).slideDown();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="button" value="啟動" class="open">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

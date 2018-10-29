@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>載入第三方插件animate.css</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div {margin: 0; padding: 0;}
+        .menu {
+            width: 200px;
+            list-style: none;
+            margin: 0 auto;    
+        }
+        li {
+            border: 1px solid #000;
+            margin-bottom: 10px;
+        }
+        li:hover, li.active {
+            background-color: blue;
+            color: #fff;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.menu li').click(function (e) { 
+                e.preventDefault();
+                $(this).toggleClass('active');
+                //this只影響選擇的該項
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>選單1</li>
+        <li>選單2</li>
+        <li>選單3</li>
+        <li>選單4</li>
+        <li>選單5</li>
+    </ul>
+</body>
+
+</html>

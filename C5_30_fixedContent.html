@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>即時放大縮小字型</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <style>
+        html,
+        body,
+        div,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 100px;
+            background-color: #ff6600;
+        }
+
+        .menu {
+            float: right;
+            list-style: none;
+        }
+
+        .menu li {
+            width: 50px;
+            float: left;
+        }
+
+        .menu li>a {
+            background-color: #000;
+            color: #fff;
+            display: block;
+            padding: 0.5em 0;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .ad {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            transition: all .5s;
+        }
+
+        .ad p {
+            padding: 20px;
+        }
+
+        .ad a.ad-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .5em;
+            background-color: #ff6600;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .ad a.ad-open {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .5em;
+            background-color: #ff6600;
+            color: #fff;
+            text-decoration: none;
+            display: none;
+        }
+
+        .active {
+            bottom: -70px;
+            left: -155px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //字體放大
+            $('.font-b').click(function (e) {
+                e.preventDefault();
+                $('.content p').css('font-size', '20px');
+            });
+            //字體放大
+            $('.font-m').click(function (e) {
+                e.preventDefault();
+                $('.content p').css('font-size', '16px');
+            });
+            //字體放大
+            $('.font-s').click(function (e) {
+                e.preventDefault();
+                $('.content p').css('font-size', '14px');
+            });
+            //close效果
+            // $('.ad-close').click(function (e) { 
+            //     e.preventDefault();
+            //     $('.ad').fadeOut();
+            // });
+            $('.ad-close').click(function (e) {
+                e.preventDefault();
+                $('.ad').addClass('active');
+                $('.ad-close').delay(1000).fadeOut(500);
+                $('.ad-open').delay(1000).fadeIn(1000).css('display', 'block');
+            });
+            $('.ad-open').click(function (e) {
+                e.preventDefault();
+                $('.ad').removeClass('active');
+                $('.ad-open').delay(200).fadeOut(500);
+                $('.ad-close').delay(100).fadeIn(1000).css('display', 'block');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="menu">
+                <li><a href="#" class="font-b">大</a></li>
+                <li><a href="#" class="font-m">中</a></li>
+                <li><a href="#" class="font-s">小</a></li>
+            </div>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam commodi architecto consequatur deleniti
+                facilis. Dolorem corrupti voluptas rerum dicta maiores voluptatum incidunt. Neque similique assumenda
+                ratione aperiam aspernatur, magni fuga?</p>
+        </div>
+    </div>
+    <div class="ad">
+        <p>浮動視窗的內容</p>
+        <a href="#" class="ad-close">關閉</a>
+        <a href="#" class="ad-open">開啟</a>
+    </div>
+</body>
+
+</html>

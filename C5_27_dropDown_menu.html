@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>設計下拉式收闔選單</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script>
+        $(document).ready(function () {
+            $('.dropdown').click(function (e) {
+                e.preventDefault();
+                $('.dropdown').toggleClass('active');
+                $('.dropdown-show').slideToggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <ul class="menu">
+                <li><a href="#">母選單A</a></li>
+                <li><a href="#">母選單B</a></li>
+                <li>
+                    <a href="www.google.com" class="dropdown">母選單C</a>
+                    <ul class="dropdown-show">
+                        <li><a href="#">子選單A</a></li>
+                        <li><a href="#">子選單B</a></li>
+                        <li><a href="#">子選單C</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
