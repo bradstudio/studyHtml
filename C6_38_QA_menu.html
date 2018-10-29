@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>載入第三方插件animate.css</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div {margin: 0; padding: 0;}
+        .questionList {
+            width: 500px;
+            margin: 20px auto;
+        }
+        .question h3 {
+            border: 1px solid #000;
+            margin: 0;
+            padding: 10px;
+        }
+        .question h3:hover, .question h3.active {
+            background-color: blue;
+            color: #fff;
+        }
+        .question p {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('h3').click(function (e) { 
+                e.preventDefault();
+                $(this).toggleClass('active');
+                $(this).parent().find('p').slideToggle();
+
+                $(this).parent().siblings().find('p').slideUp();
+                $(this).parent().siblings().find('h3').removeClass('active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="questionList">
+        <div class="question">
+            <h3>1.請問1+1=多少</h3>
+            <p>應該是2</p>
+        </div>
+        <div class="question">
+            <h3>2.請問2+2=多少</h3>
+            <p>答案是4</p>
+        </div>
+        <div class="question">
+            <h3>3.請問3+3是多少</h3>
+            <p>答案是6</p>
+        </div>
+    </div>
+</body>
+
+</html>

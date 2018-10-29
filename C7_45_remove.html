@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>remove()移除標籤屬性</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+        }
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.box').remove();
+            //hide是隱藏、remove是將整個標籤移除
+            $('.go').click(function (e) { 
+                e.preventDefault();
+                $(this).parent().parent().remove('');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati facere pariatur fuga delectus expedita dignissimos cum atque nobis tempore repudiandae sed earum, et esse amet ullam doloremque tempora magni doloribus?</div>
+    <table>
+        <tr>
+            <td><input type="button" value="刪除" class="go"></td>
+            <td>內容1</td>
+        </tr>
+        <tr>
+            <td><input type="button" value="刪除" class="go"></td>
+            <td>內容2</td>
+        </tr>
+        <tr>
+            <td><input type="button" value="刪除" class="go"></td>
+            <td>內容3</td>
+        </tr>
+    </table>
+</body>
+</html>

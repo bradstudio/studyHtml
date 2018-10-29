@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>attr();動態增加html標籤屬性</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .boxRed {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('img').attr('width', '100');
+            $('a').attr('href', 'http://www.google.com');
+            $('.go').click(function (e) { 
+                e.preventDefault();
+                $('.box').attr('class', 'boxRed');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <img src="images/pic1.jpg" alt="">
+    <a href="#">連結</a>
+    <br>
+    <input type="button" value="啟動" class="go">
+    <div class="box"></div>
+</body>
+</html>

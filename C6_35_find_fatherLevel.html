@@ -27,18 +27,19 @@
         .addCart {
             background: pink;
             border: none;
+            cursor: pointer;
         }
-        .active {
+        .addCart:hover {
             background-color: blue;
-            color: white;
         }
     </style>
     <script>
         $(document).ready(function () {
             $('.addCart').click(function (e) { 
                 e.preventDefault();
-                $(this).toggleClass('active');
-                //this只影響選擇的該項
+                $(this).parent().toggleClass('active');
+                //this只影響選擇的該項,並影響父元素
+                //找父元素時內容不確定是否要加標籤
             });
         });
     </script>

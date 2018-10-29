@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>找到子元素內容</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div {margin: 0; padding: 0;}
+        .cart {
+            width: 500px;
+            margin: 0 auto;
+        }
+        .cart ul {
+            list-style: none;
+        }
+        .cart ul li {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            border: 1px solid #000;
+            float: left;
+        }
+        .cart h3 {
+            color: #000;
+            text-align: center;
+            margin-top: 0px;
+        }
+        .cart h3.active {
+            background-color: blue;
+            color: #fff;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('li').click(function (e) { 
+                e.preventDefault();
+                $(this).find('h3').toggleClass('active');
+                //find找到元素後，接續做什麼動作
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="cart">
+        <ul>
+            <li>
+                <h3>產品1</h3>
+            </li>
+            <li>
+                <h3>產品2</h3>
+            </li>
+            <li>
+                <h3>產品3</h3>
+            </li>
+            <li>
+                <h3>產品4</h3>
+            </li>
+            <li>
+                <h3>產品5</h3>
+            </li>
+            <li>
+                <h3>產品6</h3>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

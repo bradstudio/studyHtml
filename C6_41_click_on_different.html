@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>click()、on()的差別</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+        .wrap {
+            width: 500px;
+        }
+        .wrap div {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //$('h1').click(function (e) { 
+            //    e.preventDefault();
+            //    alert('有效');
+            //});
+            //因為依照載入順序，先判斷html裡面的h1，後面才加入的h1就不會被判斷到了
+            //如果都要跳alert
+            //方式1 : 把加入h1放在click前面
+            //方式2 : 用on()的方式，啟動on的監聽
+            $('.wrap').on('click','h1', function (e) {
+                e.preventDefault();
+                alert('有效');
+            });
+            $('.jqueryAdd').html('<h1>用jQuery動態產生的</h1>');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jqueryAdd"></div>
+        <div class="inhtml"><h1>寫在html裡面</h1></div>
+    </div>
+</body>
+</html>

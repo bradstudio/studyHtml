@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用fontAwesome動態加入連結icon</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <style>
+        html, body, div, {margin: 0; padding: 0;}
+        .list a {
+            text-decoration: none;
+            color: gray;
+            font-size: 30px;
+        }
+        .list a:hover {
+            color: red;
+        }
+        .list a:before {
+            margin-right: 15px;
+        }
+        .list li {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("a[href$='.doc']").addClass('fas fa-file-word');
+            $("a[href$='.jpg']").addClass('fas fa-image');
+            $("a[href$='.zip']").addClass('fas fa-file-archive')
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="list">
+        <li><a href="doc/word.jpg">圖片檔案</a></li>
+        <li><a href="doc/word.doc">word檔案</a></li>
+        <li><a href="doc/word.zip">壓縮檔案</a></li>
+    </ul>
+</body>
+
+</html>

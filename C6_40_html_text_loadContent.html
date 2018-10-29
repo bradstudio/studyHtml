@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用html()、text()載入內容</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+    </style>
+    <script>
+        $(document).ready(function () {
+            //$('body').html('<h1>動態加入的內容</h1>');
+            $('.box h1').text('我是文字內容');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="box"><h1></h1></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>siblings同層元素</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div {margin: 0; padding: 0;}
+        .menu {
+            width: 200px;
+            list-style: none;
+            margin: 0 auto;    
+        }
+        li {
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        li.active {
+            background-color: red;
+            color: white;
+        }
+        .addCart {
+            background: pink;
+            border: none;
+            cursor: pointer;
+        }
+        .addCart:hover {
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.addCart').click(function (e) { 
+                e.preventDefault();
+                $(this).parent().toggleClass('active').siblings().removeClass('active');
+                //siblings(同層/兄弟姊妹)
+                //可以在siblings後面加上其他同層要增加的動作
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="menu">
+        <h2>購物車</h2>
+        <li><input type="button" value="加入購物車" class="addCart"> 選單1</li>
+        <li><input type="button" value="加入購物車" class="addCart"> 選單2</li>
+        <li><input type="button" value="加入購物車" class="addCart"> 選單3</li>
+        <li><input type="button" value="加入購物車" class="addCart"> 選單4</li>
+        <li><input type="button" value="加入購物車" class="addCart"> 選單5</li>
+    </ul>
+</body>
+
+</html>

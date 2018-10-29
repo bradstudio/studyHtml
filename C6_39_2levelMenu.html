@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二階層式折疊選單</title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="styles/animate.css">
+    <style>
+        html, body, div, ul, li {margin: 0; padding: 0;}
+        .menu {
+            width: 500px;
+            margin: 0 auto;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .menu > li > a {
+            display: block;
+            padding: 5px;
+            border: 1px solid #000;
+            text-decoration: none;
+        }
+        .menu > li > a:hover {
+            background-color: blue;
+            color: #fff;
+        }
+        .menu ul {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.menu > li > a').click(function (e) { 
+                e.preventDefault();
+                $(this).parent().find('ul').slideToggle();
+                //我自己的ul滑動摺疊
+                $(this).parent().siblings().find('ul').slideUp();
+                //找到其他的ul並往上滑動關閉
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#">母選單A</a>
+            <ul>
+                <li>子選單A-1</li>
+                <li>子選單A-2</li>
+                <li>子選單A-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href=#">母選單B</a>
+            <ul>
+                <li>子選單A</li>
+                <li>子選單B</li>
+                <li>子選單C</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">母選單C</a>
+            <ul>
+                <li>子選單A</li>
+                <li>子選單B</li>
+                <li>子選單C</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
